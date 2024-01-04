@@ -1,0 +1,373 @@
+@keyframes flip {
+	0%,80% {
+	  transform: rotateY(360deg) 
+	}
+}
+ 
+:root {
+	--color-primary: rgb(203, 126, 91);
+	--color-secondary:#36539d ;
+	--color-tertiary:#5879cc ;
+	--color-quaternary:#9bb7ff ;
+	--color-quinary: none;
+}
+
+@keyframes shadows {
+	0% {
+	  text-shadow: none;
+	}
+	10% {
+	  text-shadow: 3px 3px 0 var(--color-secondary);
+	}
+	20% {
+	  text-shadow: 3px 3px 0 var(--color-secondary),
+		6px 6px 0 var(--color-tertiary);
+	}
+	30% {
+	  text-shadow: 3px 3px 0 var(--color-secondary),
+		6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary);
+	}
+	40% {
+	  text-shadow: 3px 3px 0 var(--color-secondary),
+		6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary),
+		12px 12px 0 var(--color-quinary);
+	}
+	50% {
+	  text-shadow: 3px 3px 0 var(--color-secondary),
+		6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary),
+		12px 12px 0 var(--color-quinary);
+	}
+	60% {
+	  text-shadow: 3px 3px 0 var(--color-secondary),
+		6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary),
+		12px 12px 0 var(--color-quinary);
+	}
+	70% {
+	  text-shadow: 3px 3px 0 var(--color-secondary),
+		6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary);
+	}
+	80% {
+	  text-shadow: 3px 3px 0 var(--color-secondary),
+		6px 6px 0 var(--color-tertiary);
+	}
+	90% {
+	  text-shadow: 3px 3px 0 var(--color-secondary);
+	}
+	100% {
+	  text-shadow: none;
+	}
+}
+  
+@keyframes move {
+	0% {
+	  transform: translate(0px, 0px);
+	}
+	40% {
+	  transform: translate(-12px, -12px);
+	}
+	50% {
+	  transform: translate(-12px, -12px);
+	}
+	60% {
+	  transform: translate(-12px, -12px);
+	}
+	100% {
+	  transform: translate(0px, 0px);
+	}
+}
+
+/*Animação dos ícones a aumentar de tamanho de x em x segundos*/
+@keyframes resizeAnimation {
+	to {
+	  transform: scale(1.2); 
+	}
+} 
+  
+@font-face {
+    font-family:dosis ;
+    src: url("../font/Dosis-VariableFont_wght.ttf");
+}
+
+.hide {
+	visibility: hidden;
+}
+
+html body{
+	background: url("../media/blog_telemovel.png") no-repeat center fixed;
+	background-size: cover;
+	width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+	background-color: rgb(158, 133, 121);
+	font-family: dosis, Arial, Helvetica, sans-serif;
+}
+
+audio {
+	display:none;
+}
+
+div {
+	position: absolute;
+	display: block;
+	top: 33%;
+	left: 6%;
+	width: 90vw;
+}
+
+div img {
+	width: inherit;
+	height: inherit;
+	z-index: 0;
+}
+
+div p {
+	position: absolute;
+	display: block;
+	top: 12%;
+	left: 7%;
+	right: 7%;
+	z-index: 1;
+	font-size:7 pt;
+	color: rgb(86, 1, 136);
+	line-height: 3vh;
+}
+
+/*características dos popups*/
+#popup1 {
+	position: absolute;
+	display: block;
+	width: 80%;
+	top: 20%;
+	left: 10%;
+	z-index: 2;
+}
+
+#popup2 {
+	position: absolute;
+	display: block;
+	width: 50%;
+	top: 40%;
+	left: 5%;
+	z-index: 2;
+}
+
+#popup3 {
+	position: absolute;
+	display: block;
+	width: 60%;
+	top: 50%;
+	right: 10%;
+	z-index: 2;
+}
+
+#faq {
+	position: absolute;
+	display: block;
+	width: 15%;
+	top: 80%;
+	right: 40%;
+	z-index: 2;
+	/*Animação do ícone das faq a aumentar de tamanho de x em x segundos*/
+	animation: resizeAnimation 8s infinite alternate;
+		width: 15%; /* Tamanho inicial da imagem */
+ 		height: auto;
+  		transition: width 0.5s, height 0.5s;
+}
+
+#faq:hover{
+	width: 6%;
+}
+
+/*Imagem da roda - que faz hiperligação ao index*/
+figure{
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+}	
+
+figure img{
+	position: relative;
+    display: block;
+    width: 25%;
+    left: 75%;
+    top: 7%;
+	z-index: 2;
+	/*Animação do ícone da roda a aumentar de tamanho de x em x segundos*/
+	animation: resizeAnimation 2s infinite alternate;
+		width: 25%; /* Tamanho inicial da imagem */
+ 		height: auto;
+  		transition: width 0.5s, height 0.5s;
+}
+
+
+figure img:hover{
+    width: 22%;
+}
+
+
+/* elementos e animação "loading" */
+article {
+	position: absolute;
+	z-index: 0;
+	top: 44%;
+	right: 8%;
+}
+
+
+article span {
+	position: relative;
+	display: inline-block;
+	bottom: 27vh;
+	font-size: 20px;
+	color: rgb(86, 1, 136);
+	text-transform: uppercase;
+	animation: flip 2s infinite;
+	font-weight: 600;
+	animation-delay: calc(.1s * var(--i))
+
+}
+
+/*Animação "Bernardo"*/
+
+section{
+	position: absolute;
+	display: block;
+	top: 25%;
+	left: 13%;
+
+}
+
+section p{
+	position: relative;
+	text-shadow: 3px 3px 0 var(--color-secondary), 6px 6px 0 var(--color-tertiary),
+    9px 9px var(--color-quaternary), 12px 12px 0 var(--color-quinary);
+	font-weight: 800;
+  	text-transform: uppercase;
+  	font-size: 30pt;
+  	text-align: center;
+  	color: var(--color-primary);
+  	animation: shadows 1.2s ease-in infinite, move 1.2s ease-in infinite;
+  	letter-spacing:0.3ch;
+}
+
+/*Características específicas de algumas partes do texto do blogue*/
+em{
+	font-weight: 600;
+}
+
+#leve{
+	font-weight: 250;
+}
+
+#titulo{
+	color: rgb(203, 126, 91);
+}
+
+/* breakpoint para telas com largura >500px - desktop*/
+@media screen and (min-width: 500px) {
+	html body {
+	   background-image: url(../media/desktopmaior.jpg);
+	   background-size: 100vw;
+	   background-repeat: no-repeat;
+	   font-size: 12pt;
+	   bottom: 0;
+	}
+
+	
+
+	div {
+		top: 10%;
+		left: 35%;
+		width: 40vw;
+		
+	}
+
+	div p{
+		line-height: 5ch;
+	}
+
+	section{
+		left: 10%;
+		top: 50%;
+	}
+
+	section p{
+		font-size: 36pt;
+	}
+
+	article{
+		right: 30%;
+		top: 40%;
+	}
+
+/*características dos popups*/
+	#popup1{
+		width: 30%;
+		top: 24%;
+		left: 32%;
+		cursor: pointer;
+	}
+	#popup2{
+		width: 20%;
+		top: 10%;
+		left: 20%;
+		cursor: pointer;
+	}
+	#popup3{
+		width: 35%;
+		top: 30%;
+		right: 20%;
+		cursor: pointer;
+	}
+
+	#faq{
+		width: 5%;
+		top: 70%;
+		right: 85%;
+	}
+
+
+	figure img{
+		width: 10%;
+		left: 90%;
+		top: 80%;
+		
+		z-index: 2;
+	}
+	
+	figure img:hover{
+		width: 12%;
+	}
+
+/*loading*/
+	article {
+		position: absolute;
+		z-index: 0;
+		top: 44%;
+		right: 16%;
+	}
+	
+	
+	article span {
+		position: relative;
+		display: inline-block;
+		bottom: 27vh;
+		font-size: 20px;
+		color: rgb(86, 1, 136);
+		text-transform: uppercase;
+		animation: flip 2s infinite;
+		font-weight: 600;
+		animation-delay: calc(.1s * var(--i))
+	
+	}
+
+	.flor{
+		display: block;
+		position: absolute;
+		width: 10vw;
+		
+	}
+}

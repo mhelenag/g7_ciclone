@@ -1,0 +1,319 @@
+/* animação do texto a ser riscado mas fica sempre riscado */
+@keyframes strike2{
+  0%   { width : 0; }
+  100% { width: 100%; }
+}
+
+/* animação do texto a ser riscado */
+@keyframes strike{
+  0%   { width : 0; }
+  100% { width: 100%; }
+}
+
+@keyframes resizeAnimation {
+  to {
+    transform: scale(1.2); 
+  }
+}
+
+@keyframes typewriter {
+  from {
+  width: 0%;
+  }
+  to {
+  width: 40%;
+  }
+}
+
+@keyframes blink {
+  from {
+  border-color: black;
+  }
+  to {
+  border-color: transparent;
+  }
+}
+
+@font-face {
+  font-family:dosis ;
+  src: url("../font/Dosis-VariableFont_wght.ttf");
+}
+
+html body{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  font-size: 10pt;
+  font-family:dosis, Arial, Helvetica, sans-serif;
+  letter-spacing: 0.1ch;
+  line-height: 2.7ch;
+  background-color: rgb(158, 133, 121);
+}
+
+audio {display:none;}
+
+figure{
+  position: relative;
+  display: block;
+  width: 100vw;
+  height: 100vw;
+  z-index: 0;
+}
+
+figure img{
+  position: absolute;
+  display: block;
+  height: 100vh;
+    
+}
+
+#pag2{
+  position: absolute;
+  display: block;
+  right: 0;  
+}
+
+article{
+  position: absolute;
+  display: block;
+  z-index: 1;
+  top: 28%;
+  margin-left:20%;
+  margin-right: 6%;
+}
+
+#article2{
+  position: absolute;
+  display: block;
+  z-index: 1;
+  margin-left: 13%;
+  margin-right: 10%;
+}
+
+/*características das setas de mudança de página*/
+
+.setadireita{
+  position: absolute;
+  display: block;
+  z-index: 1;
+  bottom: 3%;
+  right:155px;
+  border-left: 20px solid gold ;
+  border-bottom: 20px solid transparent;
+  border-top: 20px solid transparent;
+}
+
+.setadireita:hover{
+  border-left: 20px solid seagreen ;
+  border-bottom: 20px solid transparent;
+  border-top: 20px solid transparent;
+}
+
+.setaesquerda{
+	position: absolute;
+  display: block;
+  z-index: 1;
+  bottom: 3%;
+  left:155px;
+  border-right: 20px solid gold ;
+  border-bottom: 20px solid transparent;
+  border-top: 20px solid transparent;
+}
+
+.setaesquerda:hover{
+  border-right: 20px solid seagreen ;
+  border-bottom: 20px solid transparent;
+  border-top: 20px solid transparent;
+}
+
+.dia{
+  margin-bottom: 3ch;
+  color: seagreen;
+  text-transform: uppercase;
+  font-weight: bold;
+    
+}
+
+#maquina1{
+  font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typewriter 2s steps(15) infinite alternate,
+    blink 800ms steps(15) infinite normal;
+  border-right: 5px solid black;
+
+}
+
+.nome{
+  position: absolute;
+  display: block;
+  z-index: 2;
+  top: 28%;
+  margin-left:20%;
+  margin-right: 6%;
+  font-size: xx-large;
+  font-style: oblique;
+  font-weight: 600;
+  color: seagreen;
+
+}
+
+/*características do ícone da roda*/
+div{
+  position: relative;
+  display: block;
+}
+div img{
+  position: absolute;
+  display: block;
+  margin-bottom: 10%;
+  width: 20%;
+  right: 40%;
+  top: -50vh;
+  background-color: seagreen;
+  border-radius: 40px;
+  padding-top: 5px;
+  /*Animação de aumento do tamanho da roda de x em x segundos*/
+  animation: resizeAnimation 2s infinite alternate;
+		width: 20%; /* Tamanho inicial da imagem */
+ 		height: auto;
+  	transition: width 0.5s, height 0.5s;
+}
+div img:hover{
+  width: 9%;
+  background-color:darkblue;
+}
+
+.strike {
+  position: relative;
+}
+.strike::after {
+  content: ' ';
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: rgb(66, 49, 141);
+  animation-name: strike;
+  animation-duration: 4s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; 
+  animation-iteration-count: infinite;
+}
+
+.strike2 {
+  position: relative;
+}
+.strike2::after {
+  content: ' ';
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background: rgb(66, 49, 141);
+  animation-name: strike;
+  animation-duration: 1s;
+  animation-timing-function:linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; 
+}
+
+.flor{
+  display: block;
+  position: absolute;
+  width: 60vw;
+  left: 23%;
+  top: 35vh;
+}
+
+/* breakpoint para desktop*/
+@media screen and (min-width: 500px) {
+  html body {
+    background-image: url(../media/diario.JPG);
+    background-size: 100vw;
+    background-repeat: no-repeat;
+    font-size: 12pt;
+    }
+  
+
+  figure{
+    display: none;
+  }
+
+  .setadireita{
+    display: none;
+  }
+
+  .setaesquerda{
+    display: none;
+  }
+
+  .setaadireita{
+    position: absolute;
+    display: block;
+    z-index: 1;
+    bottom: 8%;
+    right:115px;
+    border-left: 20px solid gold ;
+    border-bottom: 20px solid transparent;
+    border-top: 20px solid transparent;
+  }
+
+  .setaadireita:hover{
+    border-left: 20px solid seagreen;
+    border-bottom: 20px solid transparent;
+    border-top: 20px solid transparent;
+}
+
+  .setaaesquerda{
+    position: absolute;
+    display: block;
+    z-index: 1;
+    bottom: 8%;
+    left:115px;
+    border-right: 20px solid gold ;
+    border-bottom: 20px solid transparent;
+    border-top: 20px solid transparent;
+  }
+
+  .setaaesquerda:hover{
+    border-right: 20px solid seagreen ;
+    border-bottom: 20px solid transparent;
+    border-top: 20px solid transparent;
+  }
+
+  .flor{
+		display: block;
+		position: absolute;
+		width: 25vw;
+    left: 13%;
+    top: 35vh;
+	}
+  
+
+  article{
+    max-width: 35%;
+    top: 20%;
+    margin-left:9%;
+    margin-right: 57%;
+  }
+
+  #article2{
+    max-width: 35%;
+    margin-left: 57%;
+    margin-right: 9%;
+  }
+
+
+  div img{
+    width: 8%;
+    right: 47%;
+    top: 80vh;
+  }
+
+}

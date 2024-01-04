@@ -1,0 +1,202 @@
+@font-face {
+    font-family: Dosis;
+    src: url("../font/Dosis-VariableFont_wght.ttf");
+}
+/*Animação de aumento do tamanho do ícone da roda de x em x segundos*/
+@keyframes resizeAnimation {
+    to {
+      transform: scale(1.2); 
+    }
+}
+@keyframes colors{
+    0%{
+        background-position: 0% 50%;
+    }
+
+    50%{
+        background-position: 100% 50%;
+    }
+
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+audio {display:none;}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background:linear-gradient(45deg, gold, #ffbb7f, #ffa477, #e0afcc, #d5edb9);
+    background-size: 300%;
+    animation: colors 15s ease infinite;
+    font-family: Dosis, sans-serif;
+    color: blueviolet;
+    font-size: 10pt;
+    font-weight: 400;
+}
+
+section{
+    position: absolute;
+    display: block;
+    height: 100vh;
+    width: 100vw;
+    line-height: 3ch;
+    
+}
+
+p{
+    position: absolute;
+    display: block;
+    background-color: aliceblue;
+    border-radius: 35px;
+    padding: 10px 25px 10px 25px;
+    
+}
+
+/*características dos vários parágrafos*/
+#t1{
+    top: 22%;
+    right: 10%;
+    width: 57%;
+}
+
+#t2{
+    top: 30%;
+    left: 8%;
+    width: 42%;
+    text-align: center;
+}
+
+#t5{
+    top: 43%;
+    left: 20%;
+    width: 63%;
+}
+
+#t3{
+    top: 50%;
+    width: 40%;
+    text-align: center;
+    left: 43%;
+}
+
+#t4{
+    top: 64%;
+    column-count: 3;
+    text-align: center;
+    width: 70%;
+    left: 9%;
+}
+
+h1 {
+    display: block;
+    position: absolute;
+    font-weight: 600;
+    font-size: 34pt;
+    top: 9%;
+    left: 10%;
+
+}
+
+a{
+    text-decoration: none;
+}
+
+/*características da ilustração da relva*/
+figure{
+    Position: absolute;
+	Display: block;
+    width: 100vw;
+    bottom: 0;    
+}
+
+figure img{
+   position: absolute;
+   display: block; 
+   width: 100vw;
+   bottom: 0;
+   right: 7%;
+
+}
+
+/*características do ícone da roda, para voltar à pg inicial*/
+.roda{
+    position: absolute;
+    display: block;
+    right: 30%;
+    bottom: 8%; 
+}
+
+.roda img{
+    position: absolute;
+    display: block;
+    width: 50%;
+    height: auto;
+    /*Animação de aumento do tamanho de x em x segundos*/
+    animation: resizeAnimation 2s infinite alternate;
+		width: 30%; 
+ 		height: auto;
+  		transition: width 0.5s, height 0.5s;
+}
+
+.roda img:hover{
+    width: 20%;
+}
+
+/* breakpoint para telas com largura >500px - desktop*/
+@media screen and (min-width: 500px) {
+    html body{
+        font-size: 14pt;
+    }
+
+    h1{
+        margin-bottom: 5%;
+    }
+
+    #t1{
+        top: 12%;
+        right: 13%;
+        width: 25%;
+    }
+    
+    #t2{
+        top: 25%;
+        width: 28%;
+    }
+    
+    #t5{
+        top: 38%;
+        left: 20%;
+        width: 27%;
+    }
+    
+    #t3{
+        top: 45%;
+        width: 20%;
+        text-align: center;
+        left: 55%;
+    }
+    
+    #t4{
+        top: 54%;
+        column-count: 1;
+        width: 20%;
+        left: 15%;
+    }
+
+    figure{
+       bottom: -20%;
+    }
+
+    .roda{
+        right: 35%;
+    }
+    .roda img{
+        width: 20%;
+    }
+}
+

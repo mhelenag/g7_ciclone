@@ -1,0 +1,90 @@
+<!-- 
+2023/2024
+Website realizado no âmbito da UC WebDesign, 3º ano LDC por: 
+
+Leonor Cabral
+up202107040
+
+Maria Helena Gomes
+up202105063
+
+Mariana Girão
+up201909775
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Blog</title>
+
+		<link rel="stylesheet" href="../CSS/reset.css">
+		<link rel="stylesheet" href="../CSS/styleblog.css">
+	</head>
+
+	<body>
+		<!--música da página-->
+		<audio autoplay="true" loop src="audio/audio.mp3"></audio>
+
+		<div>
+			<img src="../media/janela.png" alt="Janela">
+
+		<!--texto do blogue-->
+			<p>
+				Decidi criar um blogue. 
+				<br>
+				Um blogue que fosse, tipo, um diário, mas aberto para o mundo inteiro. 
+				<em id="leve">Sem aquela coisa pirosa do papel que cheira bem e da caneta especial.</em> 
+				<br> <br>
+				O digital é o autêntico: <br> <em>WHAT YOU GET IS WHAT YOU SEE.</em> <br><br>Vai chamar-se <em id="titulo"> ciclone.blogspot.com</em> </p>
+
+		</div>
+
+		<!--título - nome da personagem-->
+		<section>
+			<p>BERNARDO</p>
+		</section>
+
+		<!--dinâmica do loading-->
+		<article>
+			<span style="--i:1">L</span>
+			<span style="--i:2">o</span>
+			<span style="--i:3">a</span>
+			<span style="--i:4">d</span>
+			<span style="--i:5">i</span>
+			<span style="--i:6">n</span>
+			<span style="--i:7">g</span>
+			<span style="--i:8">.</span>
+		</article>
+
+		<!-- Utilização de javascript para elemento de pop ups que fecham quando se clica neles. Não conseguimos criar este efeito apenas em CSS-->
+		<script>
+			function popup1()
+			{
+				var popup = document.getElementById("popup1");
+							popup.classList.toggle("hide");
+			}
+			function popup2()
+			{
+				var popup = document.getElementById("popup2");
+							popup.classList.toggle("hide");
+			}
+			function popup3()
+			{
+				var popup = document.getElementById("popup3");
+							popup.classList.toggle("hide");
+			}
+		</script>
+
+		<img id="popup1" src="../media/popup1.png" alt="popup1" onclick="popup1()">
+		<img id="popup2" src="../media/popup2.png" alt="popup2" onclick="popup2()">
+		<img id="popup3" src="../media/popup3.png" alt="popup3" onclick="popup3()">
+		<a href="faq.html"><img id="faq" src="../media/faq.png" alt="FAQ"></a>
+
+		<!-- ícone da roda para voltar à pg inicial-->
+		<figure>
+			<a href="../index.html"><img src="../media/roda2.png" alt="roda gigante"></a>
+		</figure>
+
+</html>

@@ -1,0 +1,222 @@
+/*Temos breakpoint para desktop (width >500px) e para telemóvel (375px x 667px - dimensões do iPhone SE)*/
+
+@font-face {
+    font-family:dosis ;
+    src: url("../font/Dosis-VariableFont_wght.ttf");
+}
+
+/*Animação do aumento de tamanho dos ícones de x em x tempo*/
+@keyframes resizeAnimation {
+	to {
+	  transform: scale(1.2); 
+	}
+}
+
+/* Animação para scroll automatico da imagem de fundo*/
+@keyframes scroll_image {
+	from {
+	  Top:0px;
+	}
+  
+   To {
+	  top: -80vh;
+	}
+}
+
+@keyframes move {
+	from {
+		background-position: top;
+	}
+	
+	To {
+		background-position: center;
+	}
+}
+
+
+html body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+	background-color: rgb(158, 133, 121);
+}
+
+/* música feita por nós para o site; 
+elemento invisível, começa automaticamente - apesar de às vezes não tocar - pelo que pesquisei, deve-se a regras particulares dos browsers relativamente a media*/
+audio {
+	display:none;}
+
+/*características da imagem de fundo*/ 
+.fundo {
+	position: relative;
+	display: block; 
+	/*condições da animação de scroll*/
+	Animation-name: scroll_image; 
+	Animation-duration: 4s;
+	Animation-delay: 1s;
+	animation-fill-mode: both;
+}
+
+#ciclone{
+	Position: absolute;
+	Display: block;
+	Width: 100vw;
+	top: 0px;
+	z-index: 0;	
+}
+
+
+#diario{
+	Position: absolute;
+	Display: block;
+	Width: 35%;
+	top: 155vh;
+	left: 10%;
+	z-index: 1;	
+	/*Animação do aumento de tamanho de x em x tempo*/
+	animation: resizeAnimation 3s infinite alternate;
+		width: 25%; 
+ 		height: auto;
+  		transition: width 0.5s, height 0.5s;
+}
+
+#blog{
+	Position: absolute;
+	Display: block;
+	Width: 35%;
+	top: 152vh;
+	right: 10%;
+	z-index: 1;	
+	/*Animação do aumento de tamanho de x em x tempo*/
+	animation: resizeAnimation 3s infinite alternate;
+		width: 25%; /* Tamanho inicial da imagem */
+ 		height: auto;
+  		transition: width 0.5s, height 0.5s;
+}
+
+#blogpc{
+	display: none;
+}
+
+#diariopc{
+	display: none;
+}
+
+#creditos{
+	font-family: Dosis,Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	position: absolute;
+	Display: block;
+	background-color: seagreen;
+	color: gold;
+	top: 171vh;
+	left: 40%;
+	z-index: 1;
+	padding: 10px;
+	border-radius: 15%;
+	text-transform: uppercase;
+}
+
+a{
+	text-decoration: none;
+}
+
+#creditos:hover{
+	background-color: gold;
+	color: seagreen;
+}
+
+/* breakpoint para telas com largura >500px - desktop*/
+@media screen and (min-width: 500px) {
+	html body{
+		background-image: url(../media/background.JPG);
+		background-size: 100vw;
+      	background-repeat: no-repeat;
+		background-position: top;
+		animation: move;
+		Animation-duration: 4s;
+		Animation-delay: 1s;
+		animation-fill-mode: both;
+		
+	}
+
+	#ciclone{
+		display: none;
+	}
+
+	#diariopc{
+		Position: absolute;
+		Display: block;
+		Width: 17%;
+		top: 150vh;
+		left: 20%;
+		z-index: 1;
+		/*Animação do aumento de tamanho de x em x tempo*/
+		animation: resizeAnimation 4s infinite alternate;
+		width: 17%; 
+ 		height: auto;
+  		transition: width 0.5s, height 0.5s;
+	}
+
+	#blogpc{
+		Position: absolute;
+		Display: block;
+		Width: 17%;
+		top: 141vh;
+		right: 25%;	
+		z-index: 1;
+		/*Animação do aumento de tamanho de x em x tempo*/
+		animation: resizeAnimation 3s infinite alternate;
+		width: 17%; 
+ 		height: auto;
+  		transition: width 0.5s, height 0.5s;
+
+	}
+
+	#diario{
+		display: none;
+	}
+
+	#blog{
+		display: none;
+	}
+	
+	#diariopc:hover{
+		width: 20% ;
+	}
+	
+	#blogpc:hover{
+		width: 20%;
+	}
+
+	
+#creditos{
+	font-family: Dosis,Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	position: absolute;
+	Display: block;
+	background-color: seagreen;
+	color: gold;
+	top: 171vh;
+	left: 45%;
+	z-index: 1;
+	padding: 10px;
+	border-radius: 15%;
+	text-transform: uppercase;
+}
+
+a{
+	text-decoration: none;
+}
+
+#creditos:hover{
+	background-color: gold;
+	color: seagreen;
+}
+}
+
+
